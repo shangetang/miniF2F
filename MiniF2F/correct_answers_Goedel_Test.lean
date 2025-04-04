@@ -202,7 +202,7 @@ theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, 
 theorem numbertheory_x5neqy2p4 (x y : ℤ) : x ^ 5 ≠ y ^ 2 + 4 := by
   /-
   To show that for any two integers \( x \) and \( y \), \( x^5 \neq y^2 + 4 \), we proceed as follows:
-  
+
   1. Consider the equation modulo 11.
   2. Check all possible values of \( x \) and \( y \) modulo 11.
   3. Verify that \( x^5 \) and \( y^2 + 4 \) do not match for any \( x \) and \( y \) modulo 11.
@@ -543,7 +543,7 @@ theorem mathd_numbertheory_293 (n : ℕ) (h₀ : n ≤ 9) (h₁ : 11 ∣ 20 * 10
 /-- What is the remainder when $129^{34}+96^{38}$ is divided by $11$? Show that it is 9.-/
 theorem mathd_numbertheory_769 : (129 ^ 34 + 96 ^ 38) % 11 = 9 := by
   /-
-  To determine the remainder when \(129^{34} + 96^{38}\) is divided by 11, we can use modular arithmetic. First, we find the remainders of \(129^{34}\) and \(96^{38}\) modulo 11. 
+  To determine the remainder when \(129^{34} + 96^{38}\) is divided by 11, we can use modular arithmetic. First, we find the remainders of \(129^{34}\) and \(96^{38}\) modulo 11.
   -/
   -- Simplify the expression by finding the remainders of the powers modulo 11.
   simp [pow_mod, (by decide : 11 ≠ 0), (by decide : 2 ≠ 0), (by decide : 3 ≠ 0), (by decide : 4 ≠ 0),
@@ -617,7 +617,7 @@ theorem mathd_numbertheory_483 (a : ℕ → ℕ) (h₀ : a 1 = 1) (h₁ : a 2 = 
   <;> norm_num
   <;> linarith
 
-/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$? 
+/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$?
 
 $ \mathrm{(A) \ } 10\qquad \mathrm{(B) \ } 11\qquad \mathrm{(C) \ } 12\qquad \mathrm{(D) \ } 13\qquad \mathrm{(E) \ } 14 $ Show that it is \mathrm{(E)}\ 14.-/
 theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
@@ -970,7 +970,7 @@ theorem mathd_algebra_76 (f : ℤ → ℤ) (h₀ : ∀ n, Odd n → f n = n ^ 2)
     (h₁ : ∀ n, Even n → f n = n ^ 2 - 4 * n - 1) : f 4 = -1 := by
   /-
   To solve for \( f(4) \) given the function \( f \) defined as:
-  \[ f(n) = \begin{cases} 
+  \[ f(n) = \begin{cases}
   n^2 & \text{if } n \text{ is odd}, \\
   n^2 - 4n - 1 & \text{if } n \text{ is even},
   \end{cases} \]
@@ -1381,7 +1381,7 @@ theorem mathd_algebra_440 (x : ℝ) (h₀ : 3 / 2 / 3 = x / 10) : x = 5 := by
 /-- Sally, Wei-Hwa, and Zoe are playing a game of marbles involving first arranging as many piles of 10 marbles as possible.  Sally brought 239 marbles, Wei-Hwa brought 174 marbles, and Zoe brought 83 marbles.  If all their marbles are grouped together, how many must be removed in order to start the game? Show that it is 6.-/
 theorem mathd_numbertheory_254 : (239 + 174 + 83) % 10 = 6 := by
   /-
-  To determine how many marbles to remove to start the game, we first calculate the total number of marbles Sally, Wei-Hwa, and Zoe have. The total number of marbles is 239 + 174 + 83 = 496. We then need to find the remainder when 496 is divided by 10. 
+  To determine how many marbles to remove to start the game, we first calculate the total number of marbles Sally, Wei-Hwa, and Zoe have. The total number of marbles is 239 + 174 + 83 = 496. We then need to find the remainder when 496 is divided by 10.
   -/
   -- Calculate the total number of marbles: 239 + 174 + 83 = 496
   -- Find the remainder when 496 is divided by 10.
@@ -1576,7 +1576,7 @@ theorem mathd_numbertheory_521 (m n : ℕ) (h₀ : Even m) (h₁ : Even n) (h₂
   -- Solve the resulting equation using non-linear arithmetic.
   nlinarith
 
-/-- Suppose $a, b, c$ are the sides of a triangle. Prove that 
+/-- Suppose $a, b, c$ are the sides of a triangle. Prove that
 
 $a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)\le{3abc}.$-/
 theorem imo_1964_p2 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : c < a + b) (h₂ : b < a + c)
@@ -1737,8 +1737,7 @@ theorem algebra_absxm1pabsxpabsxp1eqxp2_0leqxleq1 (x : ℝ)
     simp_all only [abs_of_nonneg, abs_of_nonpos, sub_nonneg, sub_nonpos] <;>
     linarith
 
-/-- Find the positive solution to
-<center>$\frac 1{x^2-10x-29}+\frac1{x^2-10x-45}-\frac 2{x^2-10x-69}=0$</center> Show that it is 013.-/
+
 theorem aime_1990_p4 (x : ℝ) (h₀ : 0 < x) (h₁ : x ^ 2 - 10 * x - 29 ≠ 0)
     (h₂ : x ^ 2 - 10 * x - 45 ≠ 0) (h₃ : x ^ 2 - 10 * x - 69 ≠ 0)
     (h₄ : 1 / (x ^ 2 - 10 * x - 29) + 1 / (x ^ 2 - 10 * x - 45) - 2 / (x ^ 2 - 10 * x - 69) = 0) :
@@ -2253,4 +2252,3 @@ theorem amc12_2000_p20 (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z) (h₁ : 
   ring_nf at h h' h''
   -- Use arithmetic to conclude the final result
   nlinarith
-

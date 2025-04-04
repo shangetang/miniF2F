@@ -9,10 +9,10 @@ package «miniF2F» where
   -- add any additional package configuration options here
 
 require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git"
+  "https://github.com/xinhjBrant/mathlib4.git" @ "2f65ba7f1a9144b20c8e7358513548e317d26de1"
 
-require aesop from git "https://github.com/leanprover-community/aesop" @ "master"
-require proofwidgets from git "https://github.com/leanprover-community/ProofWidgets4" @ "v0.0.36"
+-- require aesop from git "https://github.com/leanprover-community/aesop" @ "master"
+-- require proofwidgets from git "https://github.com/leanprover-community/ProofWidgets4" @ "v0.0.36"
 
 @[default_target]
 lean_lib «MiniF2F» where
