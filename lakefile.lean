@@ -12,11 +12,11 @@ package «miniF2F» {
   -- add any package configuration options here
 }
 
--- require mathlib from git
---   "https://github.com/leanprover-community/mathlib4.git"
-
 require mathlib from git
-  "https://github.com/xinhjBrant/mathlib4.git" @ "2f65ba7f1a9144b20c8e7358513548e317d26de1"
+  "https://github.com/leanprover-community/mathlib4.git"
+
+-- require mathlib from git
+--   "https://github.com/xinhjBrant/mathlib4.git" @ "2f65ba7f1a9144b20c8e7358513548e317d26de1"
 
 -- require mathlib from git
 --   "https://github.com/leanprover-community/mathlib4.git" @ "v4.0.0"
