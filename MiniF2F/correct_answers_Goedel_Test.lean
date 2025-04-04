@@ -36,23 +36,23 @@ theorem numbertheory_4x3m7y3neq2003 (x y : ℤ) : 4 * x ^ 3 - 7 * y ^ 3 ≠ 2003
   -- Since 2003 modulo 7 is 4, we have a contradiction because 4x^3 modulo 7 cannot equal 2003 modulo 7.
   omega
 
-/-- What is the product of all positive odd integers less than $10000$?
+-- /-- What is the product of all positive odd integers less than $10000$?
 
-$\text{(A)}\ \dfrac{10000!}{(5000!)^2}\qquad \text{(B)}\ \dfrac{10000!}{2^{5000}}\qquad
-\text{(C)}\ \dfrac{9999!}{2^{5000}}\qquad \text{(D)}\ \dfrac{10000!}{2^{5000} \cdot 5000!}\qquad
-\text{(E)}\ \dfrac{5000!}{2^{5000}}$ Show that it is \text{(D)} \dfrac{10000!}{2^{5000} \cdot 5000!}.-/
-theorem amc12_2001_p5 :
-    Finset.prod (Finset.filter (fun x => ¬Even x) (Finset.range 10000)) (id : ℕ → ℕ) =
-      10000! / (2 ^ 5000 * 5000!) := by
-  /-
-  To show that the product of all positive odd integers less than 10000 is equal to \(\dfrac{10000!}{2^{5000} \cdot 5000!}\), we start by considering the set of all odd integers less than 10000. This set can be represented as the filter of numbers in the range from 0 to 9999 that are not even. The product of these odd numbers is then computed.
-  -/
-  -- Use the set of all odd numbers less than 10000
-  rw [Finset.prod_eq_multiset_prod]
-  -- Directly evaluate the product using the given formula
-  rfl
-  <;> rfl
-  <;> rfl
+-- $\text{(A)}\ \dfrac{10000!}{(5000!)^2}\qquad \text{(B)}\ \dfrac{10000!}{2^{5000}}\qquad
+-- \text{(C)}\ \dfrac{9999!}{2^{5000}}\qquad \text{(D)}\ \dfrac{10000!}{2^{5000} \cdot 5000!}\qquad
+-- \text{(E)}\ \dfrac{5000!}{2^{5000}}$ Show that it is \text{(D)} \dfrac{10000!}{2^{5000} \cdot 5000!}.-/
+-- theorem amc12_2001_p5 :
+--     Finset.prod (Finset.filter (fun x => ¬Even x) (Finset.range 10000)) (id : ℕ → ℕ) =
+--       10000! / (2 ^ 5000 * 5000!) := by
+--   /-
+--   To show that the product of all positive odd integers less than 10000 is equal to \(\dfrac{10000!}{2^{5000} \cdot 5000!}\), we start by considering the set of all odd integers less than 10000. This set can be represented as the filter of numbers in the range from 0 to 9999 that are not even. The product of these odd numbers is then computed.
+--   -/
+--   -- Use the set of all odd numbers less than 10000
+--   rw [Finset.prod_eq_multiset_prod]
+--   -- Directly evaluate the product using the given formula
+--   rfl
+--   <;> rfl
+--   <;> rfl
 
 /-- A rectangular patio has an area of $180$ square feet and a perimeter of $54$ feet. What is the length of the diagonal (in feet) squared? Show that it is 369.-/
 theorem mathd_algebra_141 (a b : ℝ) (h₁ : a * b = 180) (h₂ : 2 * (a + b) = 54) :
@@ -185,24 +185,24 @@ theorem mathd_algebra_419 (a b : ℝ) (h₀ : a = -1) (h₁ : b = 5) : -a - b ^ 
   -- Simplify the expression using numerical calculations.
   norm_num
 
-/-- If $A$ is the sum of the positive divisors of $500$, what is the sum of the distinct prime divisors of $A$? Show that it is 25.-/
-theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, k) :
-    (∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k) = 25 := by
-  /-
-  Given \( A \) as the sum of the positive divisors of \( 500 \), we need to find the sum of the distinct prime divisors of \( A \). The prime divisors of \( 500 \) are \( 2 \), \( 5 \), and \( 25 \). Therefore, the sum of the distinct prime divisors of \( A \) is \( 2 + 5 + 25 = 32 \).
-  -/
-  -- Simplify the sum of the divisors of 500
-  simp only [Finset.sum_filter]
-  -- Substitute the given value of a into the equation
-  rw [h₀]
-  -- The prime divisors of 500 are 2, 5, and 25
-  rfl
+-- /-- If $A$ is the sum of the positive divisors of $500$, what is the sum of the distinct prime divisors of $A$? Show that it is 25.-/
+-- theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, k) :
+--     (∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k) = 25 := by
+--   /-
+--   Given \( A \) as the sum of the positive divisors of \( 500 \), we need to find the sum of the distinct prime divisors of \( A \). The prime divisors of \( 500 \) are \( 2 \), \( 5 \), and \( 25 \). Therefore, the sum of the distinct prime divisors of \( A \) is \( 2 + 5 + 25 = 32 \).
+--   -/
+--   -- Simplify the sum of the divisors of 500
+--   simp only [Finset.sum_filter]
+--   -- Substitute the given value of a into the equation
+--   rw [h₀]
+--   -- The prime divisors of 500 are 2, 5, and 25
+--   rfl
 
 /-- Show that for any two integers $x$ and $y$, $x^5 \ne y^2 + 4$.-/
 theorem numbertheory_x5neqy2p4 (x y : ℤ) : x ^ 5 ≠ y ^ 2 + 4 := by
   /-
   To show that for any two integers \( x \) and \( y \), \( x^5 \neq y^2 + 4 \), we proceed as follows:
-  
+
   1. Consider the equation modulo 11.
   2. Check all possible values of \( x \) and \( y \) modulo 11.
   3. Verify that \( x^5 \) and \( y^2 + 4 \) do not match for any \( x \) and \( y \) modulo 11.
@@ -350,15 +350,15 @@ theorem mathd_algebra_176 (x : ℝ) : (x + 1) ^ 2 * x = x ^ 3 + 2 * x ^ 2 + x :=
   -- Simplify the expression by distributing x and combining like terms
   ring
 
-/-- Let $S = 2010 + 2011 + \cdots + 4018$. Compute the residue of $S$, modulo 2009. Show that it is 0.-/
-theorem mathd_numbertheory_353 (s : ℕ) (h₀ : s = ∑ k in Finset.Icc 2010 4018, k) : s % 2009 = 0 := by
-  /-
-  To solve the problem of computing the residue of \( S = 2010 + 2011 + \cdots + 4018 \) modulo 2009, we first express \( S \) as a sum of integers from 2010 to 4018. We then use the properties of modular arithmetic to simplify the expression.
-  -/
-  -- Simplify the sum expression using properties of finite sums and modular arithmetic.
-  simp_all [Nat.mod_eq_of_lt]
-  -- The simplified expression directly shows that the sum modulo 2009 is 0.
-  <;> rfl
+-- /-- Let $S = 2010 + 2011 + \cdots + 4018$. Compute the residue of $S$, modulo 2009. Show that it is 0.-/
+-- theorem mathd_numbertheory_353 (s : ℕ) (h₀ : s = ∑ k in Finset.Icc 2010 4018, k) : s % 2009 = 0 := by
+--   /-
+--   To solve the problem of computing the residue of \( S = 2010 + 2011 + \cdots + 4018 \) modulo 2009, we first express \( S \) as a sum of integers from 2010 to 4018. We then use the properties of modular arithmetic to simplify the expression.
+--   -/
+--   -- Simplify the sum expression using properties of finite sums and modular arithmetic.
+--   simp_all [Nat.mod_eq_of_lt]
+--   -- The simplified expression directly shows that the sum modulo 2009 is 0.
+--   <;> rfl
 
 /-- Let $a$ and $b$ be two integer numbers. Show that the following statement is false: $a$ and $b$ are both even iff $8 \mid a^2 + b^2$.-/
 theorem numbertheory_notequiv2i2jasqbsqdiv8 :
@@ -543,7 +543,7 @@ theorem mathd_numbertheory_293 (n : ℕ) (h₀ : n ≤ 9) (h₁ : 11 ∣ 20 * 10
 /-- What is the remainder when $129^{34}+96^{38}$ is divided by $11$? Show that it is 9.-/
 theorem mathd_numbertheory_769 : (129 ^ 34 + 96 ^ 38) % 11 = 9 := by
   /-
-  To determine the remainder when \(129^{34} + 96^{38}\) is divided by 11, we can use modular arithmetic. First, we find the remainders of \(129^{34}\) and \(96^{38}\) modulo 11. 
+  To determine the remainder when \(129^{34} + 96^{38}\) is divided by 11, we can use modular arithmetic. First, we find the remainders of \(129^{34}\) and \(96^{38}\) modulo 11.
   -/
   -- Simplify the expression by finding the remainders of the powers modulo 11.
   simp [pow_mod, (by decide : 11 ≠ 0), (by decide : 2 ≠ 0), (by decide : 3 ≠ 0), (by decide : 4 ≠ 0),
@@ -617,7 +617,7 @@ theorem mathd_numbertheory_483 (a : ℕ → ℕ) (h₀ : a 1 = 1) (h₁ : a 2 = 
   <;> norm_num
   <;> linarith
 
-/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$? 
+/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$?
 
 $ \mathrm{(A) \ } 10\qquad \mathrm{(B) \ } 11\qquad \mathrm{(C) \ } 12\qquad \mathrm{(D) \ } 13\qquad \mathrm{(E) \ } 14 $ Show that it is \mathrm{(E)}\ 14.-/
 theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
@@ -970,7 +970,7 @@ theorem mathd_algebra_76 (f : ℤ → ℤ) (h₀ : ∀ n, Odd n → f n = n ^ 2)
     (h₁ : ∀ n, Even n → f n = n ^ 2 - 4 * n - 1) : f 4 = -1 := by
   /-
   To solve for \( f(4) \) given the function \( f \) defined as:
-  \[ f(n) = \begin{cases} 
+  \[ f(n) = \begin{cases}
   n^2 & \text{if } n \text{ is odd}, \\
   n^2 - 4n - 1 & \text{if } n \text{ is even},
   \end{cases} \]
@@ -1008,15 +1008,15 @@ theorem algebra_9onxpypzleqsum2onxpy (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0
   ring_nf
   nlinarith [sq_nonneg (x - y), sq_nonneg (y - z), sq_nonneg (z - x)]
 
-/-- Find $24^{-1} \pmod{11^2}$. That is, find the residue $b$ for which $24b \equiv 1\pmod{11^2}$.
+-- /-- Find $24^{-1} \pmod{11^2}$. That is, find the residue $b$ for which $24b \equiv 1\pmod{11^2}$.
 
-Express your answer as an integer from $0$ to $11^2-1$, inclusive. Show that it is 116.-/
-theorem mathd_numbertheory_233 (b : ZMod (11 ^ 2)) (h₀ : b = 24⁻¹) : b = 116 := by
-  /-
-  To solve the congruence equation \(24^{-1} \pmod{11^2}\), we need to find an integer \(b\) such that \(24b \equiv 1 \pmod{11^2}\). We will show that the solution to this congruence is \(b = 116\).
-  -/
-  rw [h₀] at *
-  rfl
+-- Express your answer as an integer from $0$ to $11^2-1$, inclusive. Show that it is 116.-/
+-- theorem mathd_numbertheory_233 (b : ZMod (11 ^ 2)) (h₀ : b = 24⁻¹) : b = 116 := by
+--   /-
+--   To solve the congruence equation \(24^{-1} \pmod{11^2}\), we need to find an integer \(b\) such that \(24b \equiv 1 \pmod{11^2}\). We will show that the solution to this congruence is \(b = 116\).
+--   -/
+--   rw [h₀] at *
+--   rfl
 
 /-- Show that for any real numbers $a$ and $b$, $\frac{|a+b|}{1+|a+b|}\leq \frac{|a|}{1+|a|}+\frac{|b|}{1+|b|}$.-/
 theorem algebra_absapbon1pabsapbleqsumabsaon1pabsa (a b : ℝ) :
@@ -1037,14 +1037,14 @@ theorem algebra_absapbon1pabsapbleqsumabsaon1pabsa (a b : ℝ) :
   nlinarith [abs_add a b, mul_nonneg h₀ h₁, mul_nonneg h₀ h₂, mul_nonneg h₁ h₂]
   all_goals positivity
 
-/-- Notice that  \[35\cdot40=1400.\]Find some integer $n$ with $0\leq n<1399$ such that $n$ is the multiplicative inverse to 160 modulo 1399. Show that it is 1058.-/
-theorem mathd_numbertheory_321 (n : ZMod 1399) (h₁ : n = 160⁻¹) : n = 1058 := by
-  /-
-  To find the integer \( n \) such that \( 0 \leq n < 1399 \) and \( n \) is the multiplicative inverse of 160 modulo 1399, we need to solve the equation \( n \cdot 160 \equiv 1 \pmod{1399} \). Given that \( 35 \cdot 40 = 1400 \), we can use the properties of modular arithmetic to determine \( n \).
-  -/
-  rw [h₁]
-  norm_num
-  rfl
+-- /-- Notice that  \[35\cdot40=1400.\]Find some integer $n$ with $0\leq n<1399$ such that $n$ is the multiplicative inverse to 160 modulo 1399. Show that it is 1058.-/
+-- theorem mathd_numbertheory_321 (n : ZMod 1399) (h₁ : n = 160⁻¹) : n = 1058 := by
+--   /-
+--   To find the integer \( n \) such that \( 0 \leq n < 1399 \) and \( n \) is the multiplicative inverse of 160 modulo 1399, we need to solve the equation \( n \cdot 160 \equiv 1 \pmod{1399} \). Given that \( 35 \cdot 40 = 1400 \), we can use the properties of modular arithmetic to determine \( n \).
+--   -/
+--   rw [h₁]
+--   norm_num
+--   rfl
 
 /-- We write $\lfloor X \rfloor$ to mean the greatest integer less than or equal to $X$; for example $\lfloor 3\frac{1}{2} \rfloor = 3$. If $N = \frac{1}{3}$, what is the value of $\lfloor 10N \rfloor + \lfloor 100N \rfloor + \lfloor 1000N \rfloor + \lfloor 10,000N \rfloor$? Show that it is 3702.-/
 theorem mathd_algebra_153 (n : ℝ) (h₀ : n = 1 / 3) :
@@ -1381,7 +1381,7 @@ theorem mathd_algebra_440 (x : ℝ) (h₀ : 3 / 2 / 3 = x / 10) : x = 5 := by
 /-- Sally, Wei-Hwa, and Zoe are playing a game of marbles involving first arranging as many piles of 10 marbles as possible.  Sally brought 239 marbles, Wei-Hwa brought 174 marbles, and Zoe brought 83 marbles.  If all their marbles are grouped together, how many must be removed in order to start the game? Show that it is 6.-/
 theorem mathd_numbertheory_254 : (239 + 174 + 83) % 10 = 6 := by
   /-
-  To determine how many marbles to remove to start the game, we first calculate the total number of marbles Sally, Wei-Hwa, and Zoe have. The total number of marbles is 239 + 174 + 83 = 496. We then need to find the remainder when 496 is divided by 10. 
+  To determine how many marbles to remove to start the game, we first calculate the total number of marbles Sally, Wei-Hwa, and Zoe have. The total number of marbles is 239 + 174 + 83 = 496. We then need to find the remainder when 496 is divided by 10.
   -/
   -- Calculate the total number of marbles: 239 + 174 + 83 = 496
   -- Find the remainder when 496 is divided by 10.
@@ -1576,7 +1576,7 @@ theorem mathd_numbertheory_521 (m n : ℕ) (h₀ : Even m) (h₁ : Even n) (h₂
   -- Solve the resulting equation using non-linear arithmetic.
   nlinarith
 
-/-- Suppose $a, b, c$ are the sides of a triangle. Prove that 
+/-- Suppose $a, b, c$ are the sides of a triangle. Prove that
 
 $a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)\le{3abc}.$-/
 theorem imo_1964_p2 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : c < a + b) (h₂ : b < a + c)
@@ -2253,4 +2253,3 @@ theorem amc12_2000_p20 (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z) (h₁ : 
   ring_nf at h h' h''
   -- Use arithmetic to conclude the final result
   nlinarith
-
