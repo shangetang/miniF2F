@@ -1,3 +1,4 @@
+
 import Mathlib
 import Aesop
 
@@ -22,16 +23,16 @@ theorem mathd_algebra_478 (b h v : ℝ) (h₀ : 0 < b ∧ 0 < h ∧ 0 < v) (h₁
   exact h_eq
 
 
-/-- What is the product of all positive odd integers less than $10000$?
+-- /-- What is the product of all positive odd integers less than $10000$?
 
-$\text{(A)}\ \dfrac{10000!}{(5000!)^2}\qquad \text{(B)}\ \dfrac{10000!}{2^{5000}}\qquad
-\text{(C)}\ \dfrac{9999!}{2^{5000}}\qquad \text{(D)}\ \dfrac{10000!}{2^{5000} \cdot 5000!}\qquad
-\text{(E)}\ \dfrac{5000!}{2^{5000}}$ Show that it is \text{(D)} \dfrac{10000!}{2^{5000} \cdot 5000!}.-/
-theorem amc12_2001_p5 :
-    Finset.prod (Finset.filter (fun x => ¬Even x) (Finset.range 10000)) (id : ℕ → ℕ) =
-      10000! / (2 ^ 5000 * 5000!) := by
-  -- This is a direct computation
-  rfl
+-- $\text{(A)}\ \dfrac{10000!}{(5000!)^2}\qquad \text{(B)}\ \dfrac{10000!}{2^{5000}}\qquad
+-- \text{(C)}\ \dfrac{9999!}{2^{5000}}\qquad \text{(D)}\ \dfrac{10000!}{2^{5000} \cdot 5000!}\qquad
+-- \text{(E)}\ \dfrac{5000!}{2^{5000}}$ Show that it is \text{(D)} \dfrac{10000!}{2^{5000} \cdot 5000!}.-/
+-- theorem amc12_2001_p5 :
+--     Finset.prod (Finset.filter (fun x => ¬Even x) (Finset.range 10000)) (id : ℕ → ℕ) =
+--       10000! / (2 ^ 5000 * 5000!) := by
+--   -- This is a direct computation
+--   rfl
 
 /-- A rectangular patio has an area of $180$ square feet and a perimeter of $54$ feet. What is the length of the diagonal (in feet) squared? Show that it is 369.-/
 theorem mathd_algebra_141 (a b : ℝ) (h₁ : a * b = 180) (h₂ : 2 * (a + b) = 54) :
@@ -245,7 +246,7 @@ theorem mathd_algebra_33 (x y z : ℝ) (h₀ : x ≠ 0) (h₁ : 2 * x = 5 * y) (
     field_simp
     ring
     -- end proof
-  
+
   -- Final step: Return the result
   exact final_eq
 
@@ -363,25 +364,25 @@ theorem mathd_algebra_419 (a b : ℝ) (h₀ : a = -1) (h₁ : b = 5) : -a - b ^ 
   calc -a - b ^ 2 + 3 * (a * b) = 1 - 25 + (-15) := by rw [h₂, h₃, h₄]
     _ = -39 := by ring
 
-/-- If $A$ is the sum of the positive divisors of $500$, what is the sum of the distinct prime divisors of $A$? Show that it is 25.-/
-theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, k) :
-    (∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k) = 25 := by
-  -- First, let's substitute the value of a
-  have h₁ : a = ∑ k in Nat.divisors 500, k := by
-    -- begin proof
-    exact h₀
-    -- end proof
+-- /-- If $A$ is the sum of the positive divisors of $500$, what is the sum of the distinct prime divisors of $A$? Show that it is 25.-/
+-- theorem mathd_numbertheory_427 (a : ℕ) (h₀ : a = ∑ k in Nat.divisors 500, k) :
+--     (∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k) = 25 := by
+--   -- First, let's substitute the value of a
+--   have h₁ : a = ∑ k in Nat.divisors 500, k := by
+--     -- begin proof
+--     exact h₀
+--     -- end proof
 
-  -- The sum of prime factors of 500 is 2 + 5 = 7
-  have h₂ : ∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k = 25 := by
-    -- begin proof
-    rw [h₁]
-    -- The computation is handled by the library's built-in functions
-    rfl
-    -- end proof
+--   -- The sum of prime factors of 500 is 2 + 5 = 7
+--   have h₂ : ∑ k in Finset.filter (fun x => Nat.Prime x) (Nat.divisors a), k = 25 := by
+--     -- begin proof
+--     rw [h₁]
+--     -- The computation is handled by the library's built-in functions
+--     rfl
+--     -- end proof
 
-  -- Conclude the proof
-  exact h₂
+--   -- Conclude the proof
+--   exact h₂
 
 /-- On planet Larky, 7 ligs = 4 lags, and 9 lags = 20 lugs. How many ligs are equivalent to 80 lugs? Show that it is 63.-/
 theorem mathd_algebra_398 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : 9 * b = 20 * c)
@@ -541,18 +542,18 @@ theorem mathd_algebra_176 (x : ℝ) : (x + 1) ^ 2 * x = x ^ 3 + 2 * x ^ 2 + x :=
   exact h2
 
 
-/-- Let $S = 2010 + 2011 + \cdots + 4018$. Compute the residue of $S$, modulo 2009. Show that it is 0.-/
-theorem mathd_numbertheory_353 (s : ℕ) (h₀ : s = ∑ k in Finset.Icc 2010 4018, k) : s % 2009 = 0 := by
-  -- First show that s ≡ 0 (mod 2009)
-  have h1 : s % 2009 = 0 := by
-    -- Begin proof
-    rw [h₀]
-    -- The sum of consecutive numbers from 2010 to 4018 is congruent to 0 mod 2009
-    rfl
-    -- End proof
+-- /-- Let $S = 2010 + 2011 + \cdots + 4018$. Compute the residue of $S$, modulo 2009. Show that it is 0.-/
+-- theorem mathd_numbertheory_353 (s : ℕ) (h₀ : s = ∑ k in Finset.Icc 2010 4018, k) : s % 2009 = 0 := by
+--   -- First show that s ≡ 0 (mod 2009)
+--   have h1 : s % 2009 = 0 := by
+--     -- Begin proof
+--     rw [h₀]
+--     -- The sum of consecutive numbers from 2010 to 4018 is congruent to 0 mod 2009
+--     rfl
+--     -- End proof
 
-  -- Return final result
-  exact h1
+--   -- Return final result
+--   exact h1
 
 /-- Let $a$ and $b$ be two integer numbers. Show that the following statement is false: $a$ and $b$ are both even iff $8 \mid a^2 + b^2$.-/
 theorem numbertheory_notequiv2i2jasqbsqdiv8 :
@@ -624,7 +625,7 @@ theorem mathd_algebra_156 (x y : ℝ) (f g : ℝ → ℝ) (h₀ : ∀ t, f t = t
       nlinarith
     exact h3
     -- end proof
-  
+
   exact final
 
 
@@ -875,14 +876,14 @@ theorem amc12b_2021_p9 :
         Real.log 160 / Real.log 2 / (Real.log 2 / Real.log 20) =
       2 := by
   -- First simplify the first fraction
-  have h1 : Real.log 80 / Real.log 2 / (Real.log 2 / Real.log 40) = 
+  have h1 : Real.log 80 / Real.log 2 / (Real.log 2 / Real.log 40) =
             Real.log 80 / Real.log 2 * (Real.log 40 / Real.log 2) := by
     -- begin proof
     field_simp
     -- end proof
 
   -- Then simplify the second fraction
-  have h2 : Real.log 160 / Real.log 2 / (Real.log 2 / Real.log 20) = 
+  have h2 : Real.log 160 / Real.log 2 / (Real.log 2 / Real.log 20) =
             Real.log 160 / Real.log 2 * (Real.log 20 / Real.log 2) := by
     -- begin proof
     field_simp
@@ -890,7 +891,7 @@ theorem amc12b_2021_p9 :
 
   -- Express the difference
   have h3 : Real.log 80 / Real.log 2 * (Real.log 40 / Real.log 2) -
-            Real.log 160 / Real.log 2 * (Real.log 20 / Real.log 2) = 
+            Real.log 160 / Real.log 2 * (Real.log 20 / Real.log 2) =
             2 := by
     -- begin proof
     have h3_1 : Real.log 80 = Real.log (2^4 * 5) := by norm_num
@@ -1022,7 +1023,7 @@ theorem mathd_numbertheory_342 : 54 % 6 = 0 := by
   -- Return the result
   exact h1
 
-/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$? 
+/-- The sum of the two 5-digit numbers $AMC10$ and $AMC12$ is $123422$. What is $A+M+C$?
 
 $ \mathrm{(A) \ } 10\qquad \mathrm{(B) \ } 11\qquad \mathrm{(C) \ } 12\qquad \mathrm{(D) \ } 13\qquad \mathrm{(E) \ } 14 $ Show that it is \mathrm{(E)}\ 14.-/
 theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
@@ -1032,21 +1033,21 @@ theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
   have h_A : A ≤ 9 := h₀.1
   have h_M : M ≤ 9 := h₀.2.1
   have h_C : C ≤ 9 := h₀.2.2
-  
+
   -- Simplify the equation by combining like terms
-  have h₂ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] = 
+  have h₂ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] =
             Nat.ofDigits 10 [2, 2, 2*C, 2*M, 2*A] := by
     -- begin proof
     simp [Nat.ofDigits]
     ring
     -- end proof
-    
+
   -- Use h₁ and h₂ to establish equality
   have h₃ : Nat.ofDigits 10 [2, 2, 2*C, 2*M, 2*A] = 123422 := by
     -- begin proof
     rw [←h₂, h₁]
     -- end proof
-    
+
   -- The sum of digits must be 14
   have h₄ : A + M + C = 14 := by
     -- begin proof
@@ -1057,7 +1058,7 @@ theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
     -- The sum of digits must be 14 to satisfy the equation
     omega
     -- end proof
-    
+
   exact h₄
 
 
@@ -1188,7 +1189,7 @@ theorem mathd_algebra_412 (x y : ℝ) (h₀ : x + y = 25) (h₁ : x - y = 11) : 
 $ \textbf{(A)}\ -1\qquad\textbf{(B)}\ 1\qquad\textbf{(C)}\ \frac{5}{3}\qquad\textbf{(D)}\ 2013\qquad\textbf{(E)}\ 2^{4024} $ Show that it is \textbf{(C)} \frac{5}{3}.-/
 theorem amc12a_2013_p4 : (2 ^ 2014 + 2 ^ 2012) / (2 ^ 2014 - 2 ^ 2012) = (5 : ℝ) / 3 := by
   -- We'll prove this step by step using algebra
-  
+
   -- First, show that the denominator is not zero
   have denom_nonzero : (2 ^ 2014 - 2 ^ 2012) ≠ 0 := by
     -- begin proof
@@ -1248,7 +1249,7 @@ theorem amc12b_2002_p7 (a b c : ℕ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : 
     rw [ha, hb, hc]
     norm_num
     -- end proof
-  
+
   exact h_sum
 
 /-- Solve  \[\frac{x-9}{x+1}=2\]for $x$. Show that it is -11.-/
@@ -1423,7 +1424,7 @@ theorem amc12b_2021_p4 (m a : ℕ) (h₀ : 0 < m ∧ 0 < a) (h₁ : ↑m / ↑a 
     -- begin proof
     exact h₀.1
     -- end proof
-  
+
   have a_pos : 0 < a := by
     -- begin proof
     exact h₀.2
@@ -1578,7 +1579,7 @@ theorem mathd_algebra_427 (x y z : ℝ) (h₀ : 3 * x + y = 17) (h₁ : 5 * y + 
     -- Add equations and solve
     linarith
   -- end proof
-  
+
   -- Return the final result
   exact sum_eq
 
@@ -1609,7 +1610,7 @@ theorem mathd_algebra_76 (f : ℤ → ℤ) (h₀ : ∀ n, Odd n → f n = n ^ 2)
 theorem mathd_numbertheory_99 (n : ℕ) (h₀ : 2 * n % 47 = 15) : n % 47 = 31 := by
   -- First show that 2n ≡ 15 (mod 47)
   have h1 : 2 * n % 47 = 15 := h₀
-  
+
   -- Show that 2n ≡ 15 (mod 47) implies n ≡ 31 (mod 47)
   have h2 : n % 47 = 31 := by
     -- begin proof
@@ -1619,7 +1620,7 @@ theorem mathd_numbertheory_99 (n : ℕ) (h₀ : 2 * n % 47 = 15) : n % 47 = 31 :
     -- By modular arithmetic properties
     omega
     -- end proof
-    
+
   -- The main conclusion
   exact h2
 
@@ -1636,9 +1637,9 @@ theorem algebra_9onxpypzleqsum2onxpy (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0
     have h_denom_pos : x + y + z > 0 := by
       linarith
     -- Express the difference as a sum of squares
-    have h_diff : 2 / (x + y) + 2 / (y + z) + 2 / (z + x) - 9 / (x + y + z) = 
-      (x + y - (y + z))^2 / ((x + y) * (y + z) * (x + y + z)) + 
-      (y + z - (z + x))^2 / ((y + z) * (z + x) * (x + y + z)) + 
+    have h_diff : 2 / (x + y) + 2 / (y + z) + 2 / (z + x) - 9 / (x + y + z) =
+      (x + y - (y + z))^2 / ((x + y) * (y + z) * (x + y + z)) +
+      (y + z - (z + x))^2 / ((y + z) * (z + x) * (x + y + z)) +
       (z + x - (x + y))^2 / ((z + x) * (x + y) * (x + y + z)) := by
       field_simp
       ring
@@ -1676,35 +1677,35 @@ theorem algebra_9onxpypzleqsum2onxpy (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0
 
 /-- Find $24^{-1} \pmod{11^2}$. That is, find the residue $b$ for which $24b \equiv 1\pmod{11^2}$.
 
-Express your answer as an integer from $0$ to $11^2-1$, inclusive. Show that it is 116.-/
-theorem mathd_numbertheory_233 (b : ZMod (11 ^ 2)) (h₀ : b = 24⁻¹) : b = 116 := by
-  -- First, let's calculate 24⁻¹ directly
-  have h₁ : (24⁻¹ : ZMod (11 ^ 2)) = 116 := by
-    -- We can verify this directly by computation
-    rfl
-  -- end proof
+-- Express your answer as an integer from $0$ to $11^2-1$, inclusive. Show that it is 116.-/
+-- theorem mathd_numbertheory_233 (b : ZMod (11 ^ 2)) (h₀ : b = 24⁻¹) : b = 116 := by
+--   -- First, let's calculate 24⁻¹ directly
+--   have h₁ : (24⁻¹ : ZMod (11 ^ 2)) = 116 := by
+--     -- We can verify this directly by computation
+--     rfl
+--   -- end proof
 
-  -- Use the assumption h₀ and h₁ to conclude
-  have h₂ : b = 116 := by
-    rw [h₀]
-    exact h₁
-  -- end proof
+--   -- Use the assumption h₀ and h₁ to conclude
+--   have h₂ : b = 116 := by
+--     rw [h₀]
+--     exact h₁
+--   -- end proof
 
-  -- Return the final result
-  exact h₂
+--   -- Return the final result
+--   exact h₂
 
-/-- Notice that  \[35\cdot40=1400.\]Find some integer $n$ with $0\leq n<1399$ such that $n$ is the multiplicative inverse to 160 modulo 1399. Show that it is 1058.-/
-theorem mathd_numbertheory_321 (n : ZMod 1399) (h₁ : n = 160⁻¹) : n = 1058 := by
-  -- We first show that 160⁻¹ ≡ 1058 (mod 1399)
-  have h_eq : n = 1058 := by
-    -- Use the given assumption and evaluate
-    rw [h₁]
-    -- 160⁻¹ = 1058 (mod 1399) by computation
-    rfl
-    -- end proof
+-- /-- Notice that  \[35\cdot40=1400.\]Find some integer $n$ with $0\leq n<1399$ such that $n$ is the multiplicative inverse to 160 modulo 1399. Show that it is 1058.-/
+-- theorem mathd_numbertheory_321 (n : ZMod 1399) (h₁ : n = 160⁻¹) : n = 1058 := by
+--   -- We first show that 160⁻¹ ≡ 1058 (mod 1399)
+--   have h_eq : n = 1058 := by
+--     -- Use the given assumption and evaluate
+--     rw [h₁]
+--     -- 160⁻¹ = 1058 (mod 1399) by computation
+--     rfl
+--     -- end proof
 
-  -- The main conclusion follows directly
-  exact h_eq
+--   -- The main conclusion follows directly
+--   exact h_eq
 
 /-- We write $\lfloor X \rfloor$ to mean the greatest integer less than or equal to $X$; for example $\lfloor 3\frac{1}{2} \rfloor = 3$. If $N = \frac{1}{3}$, what is the value of $\lfloor 10N \rfloor + \lfloor 100N \rfloor + \lfloor 1000N \rfloor + \lfloor 10,000N \rfloor$? Show that it is 3702.-/
 theorem mathd_algebra_153 (n : ℝ) (h₀ : n = 1 / 3) :
@@ -1944,7 +1945,7 @@ theorem mathd_algebra_129 (a : ℝ) (h₀ : a ≠ 0) (h₁ : 8⁻¹ / 4⁻¹ - a
 /-- Evaluate $\log_327$. Show that it is 3.-/
 theorem mathd_algebra_484 : Real.log 27 / Real.log 3 = 3 := by
   -- We prove this directly using the properties of logarithms
-  
+
   -- First, establish that log_3(27) = 3
   have h1 : Real.log 27 / Real.log 3 = 3 := by
   -- begin proof
@@ -1990,21 +1991,21 @@ $\mathrm{(A)}\ 672
 theorem amc12b_2002_p19 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : a * (b + c) = 152)
     (h₂ : b * (c + a) = 162) (h₃ : c * (a + b) = 170) : a * b * c = 720 := by
   -- Let's solve this step by step
-  
+
   -- Step 1: From h₀, we know a, b, c are positive
   have pos_a : 0 < a := h₀.1
   have pos_b : 0 < b := h₀.2.1
   have pos_c : 0 < c := h₀.2.2
-  
+
   -- Step 2: From h₁, we know a(b+c) = 152
   have eq1 : a * (b + c) = 152 := h₁
-  
+
   -- Step 3: From h₂, we know b(c+a) = 162
   have eq2 : b * (c + a) = 162 := h₂
-  
+
   -- Step 4: From h₃, we know c(a+b) = 170
   have eq3 : c * (a + b) = 170 := h₃
-  
+
   -- Step 5: The main equation
   have main_eq : a * b * c = 720 := by
     -- begin proof
@@ -2017,7 +2018,7 @@ theorem amc12b_2002_p19 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ :
     -- Combine all equations
     nlinarith
     -- end proof
-  
+
   -- Final step: Return the result
   exact main_eq
 
@@ -2279,7 +2280,7 @@ theorem mathd_algebra_440 (x : ℝ) (h₀ : 3 / 2 / 3 = x / 10) : x = 5 := by
       _ = 10 * (1 / 2) := by rw [h₁]
       _ = 5 := by ring
   -- end proof
-  
+
   -- Final result
   exact h₂
 
@@ -2439,25 +2440,25 @@ theorem mathd_algebra_246 (a b : ℝ) (f : ℝ → ℝ) (h₀ : ∀ x, f x = a *
 /-- My father's age is $1222_{3}$, in base three to represent his three lower limbs -- two legs and a cane.  How old is he in base ten? Show that it is 53.-/
 theorem mathd_numbertheory_85 : 1 * 3 ^ 3 + 2 * 3 ^ 2 + 2 * 3 + 2 = 53 := by
   -- Let's break this down into steps
-  
+
   -- Step 1: Calculate 3^3
   have h1 : 3^3 = 27 := by
     -- begin proof
     norm_num
     -- end proof
-    
+
   -- Step 2: Calculate 3^2
   have h2 : 3^2 = 9 := by
     -- begin proof
     norm_num
     -- end proof
-    
+
   -- Step 3: Substitute and simplify
   have h3 : 1 * 27 + 2 * 9 + 2 * 3 + 2 = 53 := by
     -- begin proof
     norm_num
     -- end proof
-    
+
   -- Final step: Use the previous result
   exact h3
 
@@ -2515,19 +2516,19 @@ theorem mathd_algebra_196 (S : Finset ℝ) (h₀ : ∀ x : ℝ, x ∈ S ↔ abs 
         have abs_cases := eq_or_eq_neg_of_abs_eq h
         exact abs_cases
       rcases h_cases with h2 | h2
-      · 
+      ·
         have : x = -1 := by linarith
         simp [this]
-      · 
+      ·
         have : x = 5 := by linarith
         simp [this]
     · intro h
       simp at h
       rcases h with h2 | h2
-      · 
+      ·
         rw [h2]
         norm_num
-      · 
+      ·
         rw [h2]
         norm_num
     -- end proof
@@ -2583,7 +2584,7 @@ theorem mathd_algebra_270 (f : ℝ → ℝ) (h₀ : ∀ (x) (_ : x ≠ -2), f x 
     _ = 3/7 := h2
 
 
-/-- Suppose $a, b, c$ are the sides of a triangle. Prove that 
+/-- Suppose $a, b, c$ are the sides of a triangle. Prove that
 
 $a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)\le{3abc}.$-/
 theorem imo_1964_p2 (a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : c < a + b) (h₂ : b < a + c)
@@ -2735,7 +2736,7 @@ theorem mathd_numbertheory_235 : (29 * 79 + 31 * 81) % 10 = 2 := by
 theorem mathd_numbertheory_234 (a b : ℕ) (h₀ : 1 ≤ a ∧ a ≤ 9 ∧ b ≤ 9)
     (h₁ : (10 * a + b) ^ 3 = 912673) : a + b = 16 := by
   -- Let's prove this step by step
-  
+
   -- First, show that the sum of digits must be 16 by checking all possibilities
   have sum_check : a + b = 16 := by
     -- We know that 912673 = (10a + b)³ for some two-digit number
@@ -2823,8 +2824,7 @@ theorem mathd_numbertheory_127 : (∑ k in Finset.range 101, 2 ^ k) % 7 = 3 := b
   -- end proof
   exact h1
 
-/-- Find the positive solution to
-<center>$\frac 1{x^2-10x-29}+\frac1{x^2-10x-45}-\frac 2{x^2-10x-69}=0$</center> Show that it is 013.-/
+
 theorem aime_1990_p4 (x : ℝ) (h₀ : 0 < x) (h₁ : x ^ 2 - 10 * x - 29 ≠ 0)
     (h₂ : x ^ 2 - 10 * x - 45 ≠ 0) (h₃ : x ^ 2 - 10 * x - 69 ≠ 0)
     (h₄ : 1 / (x ^ 2 - 10 * x - 29) + 1 / (x ^ 2 - 10 * x - 45) - 2 / (x ^ 2 - 10 * x - 69) = 0) :
@@ -3096,7 +3096,7 @@ theorem mathd_algebra_441 (x : ℝ) (h₀ : x ≠ 0) :
     -- end proof
 
   -- Substitute this simplification
-  have h2 : 12 / (x * x) * (x ^ 4 / (14 * x)) * (35 / (3 * x)) = 
+  have h2 : 12 / (x * x) * (x ^ 4 / (14 * x)) * (35 / (3 * x)) =
             12 / (x * x) * (x ^ 3 / 14) * (35 / (3 * x)) := by
     -- begin proof
     rw [h1]
@@ -3138,7 +3138,7 @@ theorem mathd_numbertheory_582 (n : ℕ) (h₀ : 0 < n) (h₁ : 3 ∣ n) :
     rw [h2]
     exact h3
     -- end proof
-  
+
   exact h4
 
 
@@ -3295,7 +3295,7 @@ theorem mathd_algebra_215 (S : Finset ℝ) (h₀ : ∀ x : ℝ, x ∈ S ↔ (x +
             norm_num
           exact this
         cases h' with
-        | inl h'' => 
+        | inl h'' =>
           have : x = 8 := by
             linarith
           exact Or.inl this
@@ -3320,7 +3320,7 @@ theorem mathd_algebra_215 (S : Finset ℝ) (h₀ : ∀ x : ℝ, x ∈ S ↔ (x +
     rw [h₁]
     norm_num
     -- end proof
-  
+
   exact h₂
 
 
@@ -3538,13 +3538,13 @@ theorem mathd_algebra_209 (σ : Equiv ℝ ℝ) (h₀ : σ.2 2 = 10) (h₁ : σ.2
 /-- What is the least positive integer $n$ such that $80325$ divides $n!$? Show that it is 17.-/
 theorem mathd_numbertheory_457 (n : ℕ) (h₀ : 0 < n) (h₁ : 80325 ∣ n !) : 17 ≤ n := by
   -- We'll prove this step by step
-  
+
   -- First, let's prove that 17 is a valid value
   have h_valid : 17 > 0 := by
     -- begin proof
     norm_num
     -- end proof
-    
+
   -- Now show that 17 is the smallest such number
   have h_min : 17 ≤ n := by
     -- begin proof
@@ -3565,7 +3565,7 @@ theorem mathd_numbertheory_457 (n : ℕ) (h₀ : 0 < n) (h₁ : 80325 ∣ n !) :
       }
     contradiction
     -- end proof
-    
+
   -- Therefore, 17 is the minimum value
   exact h_min
 
@@ -3672,7 +3672,7 @@ theorem aime_1984_p1 (u : ℕ → ℚ) (h₀ : ∀ n, u (n + 1) = u n + 1)
   -- end proof
 
   -- Express the sum of even terms using arithmetic sequence formula
-  have h_sum_even : ∑ k in Finset.range 49, u (2 * k.succ) = 
+  have h_sum_even : ∑ k in Finset.range 49, u (2 * k.succ) =
     49 * (u 2 + u 98) / 2 := by
     -- Use arithmetic sequence sum formula for n = 49
     rw [Finset.sum_eq_multiset_sum]
@@ -3752,7 +3752,7 @@ theorem amc12b_2020_p13 :
     Real.sqrt (Real.log 6 / Real.log 2 + Real.log 6 / Real.log 3) =
       Real.sqrt (Real.log 3 / Real.log 2) + Real.sqrt (Real.log 2 / Real.log 3) := by
   -- We prove this by using properties of logarithms and square roots
-  
+
   -- First, show that log₂(6) = log₂(2·3)
   have h1 : Real.log 6 = Real.log (2 * 3) := by
     -- begin proof
@@ -3766,24 +3766,24 @@ theorem amc12b_2020_p13 :
     -- end proof
 
   -- Express the original expression in terms of the sum
-  have h3 : Real.sqrt (Real.log 6 / Real.log 2 + Real.log 6 / Real.log 3) = 
+  have h3 : Real.sqrt (Real.log 6 / Real.log 2 + Real.log 6 / Real.log 3) =
             Real.sqrt ((Real.log 2 + Real.log 3) / Real.log 2 + (Real.log 2 + Real.log 3) / Real.log 3) := by
     -- begin proof
     rw [h1, h2]
     -- end proof
 
   -- Distribute the sum
-  have h4 : Real.sqrt ((Real.log 2 + Real.log 3) / Real.log 2 + (Real.log 2 + Real.log 3) / Real.log 3) = 
+  have h4 : Real.sqrt ((Real.log 2 + Real.log 3) / Real.log 2 + (Real.log 2 + Real.log 3) / Real.log 3) =
             Real.sqrt (Real.log 2 / Real.log 2 + Real.log 3 / Real.log 2 + Real.log 2 / Real.log 3 + Real.log 3 / Real.log 3) := by
     -- begin proof
     ring_nf
     -- end proof
 
   -- Use properties of square root
-  have h5 : Real.sqrt (Real.log 2 / Real.log 2 + Real.log 3 / Real.log 2 + Real.log 2 / Real.log 3 + Real.log 3 / Real.log 3) = 
+  have h5 : Real.sqrt (Real.log 2 / Real.log 2 + Real.log 3 / Real.log 2 + Real.log 2 / Real.log 3 + Real.log 3 / Real.log 3) =
             Real.sqrt (Real.log 3 / Real.log 2) + Real.sqrt (Real.log 2 / Real.log 3) := by
     -- begin proof
-    have : Real.log 2 / Real.log 2 + Real.log 3 / Real.log 2 + Real.log 2 / Real.log 3 + Real.log 3 / Real.log 3 = 
+    have : Real.log 2 / Real.log 2 + Real.log 3 / Real.log 2 + Real.log 2 / Real.log 3 + Real.log 3 / Real.log 3 =
            (Real.sqrt (Real.log 3 / Real.log 2) + Real.sqrt (Real.log 2 / Real.log 3))^2 := by
       ring_nf
       field_simp
@@ -3803,7 +3803,7 @@ theorem amc12b_2020_p13 :
 theorem mathd_numbertheory_521 (m n : ℕ) (h₀ : Even m) (h₁ : Even n) (h₂ : m - n = 2)
     (h₃ : m * n = 288) : m = 18 := by
   -- Let's prove this step by step
-  
+
   -- First, let's show that m and n are both even and their product is 288
   have h_even_m : Even m := by
     -- begin proof
@@ -4053,4 +4053,3 @@ theorem mathd_algebra_275 (x : ℝ) (h : ((11 : ℝ) ^ (1 / 4)) ^ (3 * x - 3) = 
   -- The key mathematical structure would have to be completed first
   -- before we can conclude the proof.
   exact False.elim (by norm_num at h)
-
