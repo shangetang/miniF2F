@@ -1675,38 +1675,6 @@ theorem algebra_9onxpypzleqsum2onxpy (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0
   -- Use the equality directly
   exact h1
 
-/-- Find $24^{-1} \pmod{11^2}$. That is, find the residue $b$ for which $24b \equiv 1\pmod{11^2}$.
-
--- Express your answer as an integer from $0$ to $11^2-1$, inclusive. Show that it is 116.-/
--- theorem mathd_numbertheory_233 (b : ZMod (11 ^ 2)) (h₀ : b = 24⁻¹) : b = 116 := by
---   -- First, let's calculate 24⁻¹ directly
---   have h₁ : (24⁻¹ : ZMod (11 ^ 2)) = 116 := by
---     -- We can verify this directly by computation
---     rfl
---   -- end proof
-
---   -- Use the assumption h₀ and h₁ to conclude
---   have h₂ : b = 116 := by
---     rw [h₀]
---     exact h₁
---   -- end proof
-
---   -- Return the final result
---   exact h₂
-
--- /-- Notice that  \[35\cdot40=1400.\]Find some integer $n$ with $0\leq n<1399$ such that $n$ is the multiplicative inverse to 160 modulo 1399. Show that it is 1058.-/
--- theorem mathd_numbertheory_321 (n : ZMod 1399) (h₁ : n = 160⁻¹) : n = 1058 := by
---   -- We first show that 160⁻¹ ≡ 1058 (mod 1399)
---   have h_eq : n = 1058 := by
---     -- Use the given assumption and evaluate
---     rw [h₁]
---     -- 160⁻¹ = 1058 (mod 1399) by computation
---     rfl
---     -- end proof
-
---   -- The main conclusion follows directly
---   exact h_eq
-
 /-- We write $\lfloor X \rfloor$ to mean the greatest integer less than or equal to $X$; for example $\lfloor 3\frac{1}{2} \rfloor = 3$. If $N = \frac{1}{3}$, what is the value of $\lfloor 10N \rfloor + \lfloor 100N \rfloor + \lfloor 1000N \rfloor + \lfloor 10,000N \rfloor$? Show that it is 3702.-/
 theorem mathd_algebra_153 (n : ℝ) (h₀ : n = 1 / 3) :
     Int.floor (10 * n) + Int.floor (100 * n) + Int.floor (1000 * n) + Int.floor (10000 * n) = 3702 := by
